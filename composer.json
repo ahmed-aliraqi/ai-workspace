@@ -1,0 +1,29 @@
+{
+    "name": "ahmed-aliraqi/ai-workspace",
+    "description": "AI multi-agent development workspace installer for Laravel projects.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "ai", "agents", "installer", "workspace"],
+    "authors": [
+        {
+            "name": "Ahmed Fathy",
+            "email": "ahmed@fathy.me"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "symfony/console": "^7.0",
+        "symfony/process": "^7.0",
+        "symfony/filesystem": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AiWorkspace\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/ai-workspace"
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

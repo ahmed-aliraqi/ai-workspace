@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+foreach ([
+    __DIR__.'/../../../autoload.php', // installed globally via composer
+    __DIR__.'/../vendor/autoload.php', // local development
+] as $autoload) {
+    if (file_exists($autoload)) {
+        require $autoload;
+        break;
+    }
+}
+
+use AiWorkspace\Commands\InstallCommand;
+use AiWorkspace\Commands\StatusCommand;
+use Symfony\Component\Console\Application;
+
+$app = new Application('AI Workspace', '1.0.0');
+$app->add(new InstallCommand());
+$app->add(new StatusCommand());
+$app->setDefaultCommand('install');
+$app->run();

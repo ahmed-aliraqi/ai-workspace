@@ -1,0 +1,52 @@
+# AI team roster. Models and effort here are the single source of truth;
+# .claude/agents/*.md frontmatter must stay in sync with this file.
+
+team_leader:
+  name: Tariq
+  agent: tariq-team-leader
+  model: opus
+  effort: high
+  responsibilities:
+    - Sprint planning and task decomposition (detailed, no-questions-needed specs)
+    - Assigning tasks and dependencies
+    - Merging task branches, resolving all git conflicts
+    - Technical review (architecture, security, performance, conventions)
+    - Opening and merging the single PR per feature
+    - Keeping BOARD.md and sprint files current
+
+developers:
+  - name: Omar
+    agent: omar-backend
+    role: backend
+    model: sonnet
+    effort: medium
+    focus: [models, migrations, services, jobs, APIs, tests]
+  - name: Khalid
+    agent: khalid-backend
+    role: backend
+    model: sonnet
+    effort: medium
+    focus: [models, migrations, services, jobs, APIs, tests]
+  - name: Sara
+    agent: sara-frontend
+    role: frontend
+    model: sonnet
+    effort: medium
+    focus: [pages, components, shadcn, forms, state, UI tests]
+  - name: Lina
+    agent: lina-frontend
+    role: frontend
+    model: sonnet
+    effort: medium
+    focus: [pages, components, shadcn, forms, state, UI tests]
+
+qa:
+  name: Noor
+  agent: noor-qa
+  model: sonnet
+  effort: high
+  responsibilities:
+    - Business-logic review of every finished feature (against acceptance criteria)
+    - Audit automated test coverage; demand missing cases
+    - Write the manual test script that goes into the PR
+    - Report defects as bugfix tasks with reproduction steps
