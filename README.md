@@ -9,24 +9,17 @@ instantly.
 
 ## Install (global)
 
-Until it's published on Packagist, install from the local path or your Git remote:
-
 ```bash
-# from a git remote
-composer global config repositories.ai-workspace vcs git@github.com:ahmed-aliraqi/ai-workspace.git
-composer global require ahmed-aliraqi/ai-workspace:dev-main
-
-# or from the local path
-composer global config repositories.ai-workspace path /home/ahmed/code/packages/ai-workspace
-composer global require ahmed-aliraqi/ai-workspace:@dev
+composer global require ahmedfathy/ai-workspace
 ```
 
 Make sure `~/.config/composer/vendor/bin` is on your `PATH`.
 
-Once published on Packagist it becomes just:
+For local development against this repo instead of the published version:
 
 ```bash
-composer global require ahmed-aliraqi/ai-workspace
+composer global config repositories.ai-workspace path /home/ahmed/code/packages/ai-workspace
+composer global require ahmedfathy/ai-workspace:@dev
 ```
 
 ## Usage
@@ -91,7 +84,16 @@ one short line, author = the repo's git user, never any AI attribution.
 - [`gh` CLI](https://cli.github.com) authenticated (issues + PRs)
 - Claude Code opened inside the project
 
-## Publishing to Packagist (when ready)
+## Cutting a new release
 
-Push to GitHub, tag `v1.0.0`, submit the repo on packagist.org — then the global
-install works exactly like the Laravel installer.
+Packagist serves installs from tagged releases only (untagged installs fall back to
+GitHub's API and hit its anonymous rate limit, prompting for a token). To ship a new
+version:
+
+```bash
+git tag -a vX.Y.Z -m "vX.Y.Z"
+git push origin vX.Y.Z
+```
+
+If the GitHub → Packagist webhook isn't set up, trigger the update manually from the
+package's "Settings" tab on packagist.org.
