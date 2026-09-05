@@ -10,7 +10,7 @@ instantly.
 ## Install (global)
 
 ```bash
-composer global require ahmedfathy/ai-workspace
+composer global require ahmed-aliraqi/ai-workspace
 ```
 
 Make sure `~/.config/composer/vendor/bin` is on your `PATH`.
@@ -19,7 +19,7 @@ For local development against this repo instead of the published version:
 
 ```bash
 composer global config repositories.ai-workspace path /home/ahmed/code/packages/ai-workspace
-composer global require ahmedfathy/ai-workspace:@dev
+composer global require ahmed-aliraqi/ai-workspace:@dev
 ```
 
 ## Usage
